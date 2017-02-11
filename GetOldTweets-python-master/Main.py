@@ -10,12 +10,12 @@ def main():
 		print "Mentions: %s" % t.mentions
 		print "Hashtags: %s\n" % t.hashtags
 	
-	tweetCount = 34400
+	tweetCount = 200
 	# Example 1 - Get tweets by username
 	tweetCriteria = got.manager.TweetCriteria().setUsername('realDonaldTrump').setMaxTweets(tweetCount)
 	tweetList = got.manager.TweetManager.getTweets(tweetCriteria)
 	count = 0
-	with open ('trumptweets.txt', 'w') as outFile:
+	with open ('trumptweets2.txt', 'w') as outFile:
 		for i in range(tweetCount):
 			try:
 				print>> outFile, tweetList[i].text.encode('utf-8') + '\n'
